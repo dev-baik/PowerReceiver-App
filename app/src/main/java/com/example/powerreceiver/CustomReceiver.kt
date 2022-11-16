@@ -14,7 +14,8 @@ class CustomReceiver : BroadcastReceiver() {
         val toastMessage = when (intentAction) {
             Intent.ACTION_POWER_CONNECTED -> "Power connected!"
             Intent.ACTION_POWER_DISCONNECTED -> "Power disconnected"
-            else -> "unknown intent aciton"
+            ACTION_CUSTOM_BROADCAST -> "Custom Broadcast Received"
+            else -> "unknown intent action"
         }
 
         Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show()
