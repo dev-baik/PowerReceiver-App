@@ -18,5 +18,12 @@ class MainActivity : AppCompatActivity() {
         val filter = IntentFilter()
         filter.addAction(Intent.ACTION_POWER_DISCONNECTED)
         filter.addAction(Intent.ACTION_POWER_CONNECTED)
+
+        registerReceiver(mReceiver, filter)
+    }
+
+    override fun onDestroy() {
+        unregisterReceiver(mReceiver)
+        super.onDestroy()
     }
 }
